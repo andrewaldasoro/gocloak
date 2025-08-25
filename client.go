@@ -4581,7 +4581,7 @@ func (g *GoCloak) DeleteOrganization(ctx context.Context, token, realm, idOfOrga
 	const errMessage = "could not delete organization"
 
 	resp, err := g.GetRequestWithBearerAuth(ctx, token).
-		Delete(g.getAdminRealmURL(realm, "organization", idOfOrganization))
+		Delete(g.getAdminRealmURL(realm, "organizations", idOfOrganization))
 
 	return checkForError(resp, err, errMessage)
 }
